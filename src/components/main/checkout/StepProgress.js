@@ -7,7 +7,7 @@ function Progress({ dataPhase, number, label }) {
       <span className={styles.progressIcon}>
         <span className={styles.text}>{number}</span>
         <img
-          className={styles.icon + " cursor-point"}
+          className={`${styles.icon} cursor-point}`}
           src={stepUndone}
           alt=""
         />
@@ -19,7 +19,7 @@ function Progress({ dataPhase, number, label }) {
 
 function StepProgress() {
   return (
-    <div>
+    <div class="col col-12">
       {/* register-title */}
       <h2 className={styles.registerTitle + " col col-12"}>結帳</h2>
       {/* register-progress */}
