@@ -6,8 +6,8 @@ select,
 input {
   height: 40px;
   width: 100%;
-  border-radius: 5px;
-  border-color: var(--input-border);
+  border-radius: 4px;
+    border: 1px solid var(--input-border);
   padding-left: 16px;
   font-size: 12px;
 }
@@ -15,7 +15,6 @@ input {
 .formTitle {
   font-weight: 700;
   font-size: 24px;
-  line-height: 24px;
 }
 
 .inputRow {
