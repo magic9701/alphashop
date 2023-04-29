@@ -1,0 +1,29 @@
+.formTitle {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.radioGroup {
+  margin-top: 24px;
+  height: 60px;
+  border-radius: 4px;
+  border: 1px solid var(--select-true);
+  align-items: center;
+
+  input {
+    height: 100%;
+    width: 20px;
+    margin: 0 20px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .period {
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
