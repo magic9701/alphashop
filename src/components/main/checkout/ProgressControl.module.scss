@@ -1,0 +1,43 @@
+.progressControlContainer {
+  border-top: 1px solid #E6E6EB;
+
+  .buttonGroup {
+    justify-content: space-between;
+    margin-top: 24px;
+
+    button {
+      height: 46px;
+      width: 30%;
+      max-width: 174px;
+      border-radius: 8px;
+      border: 0;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .prev {
+      background-color: var(--background-color);
+
+      img {
+        margin-right: 13.5px;
+      }
+    }
+
+    .next,
+    .submit {
+      color: var(--white);
+      background-color: var(--pink);
+
+      img {
+        margin-left: 13.5px;
+      }
+    }
+  }
+
+  .addressButtonGroup {
+    justify-content: flex-end;
+  }
+}
