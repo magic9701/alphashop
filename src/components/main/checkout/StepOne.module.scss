@@ -1,0 +1,50 @@
+form {
+  margin-top: 64px;
+}
+
+select,
+input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border-color: var(--input-border);
+  padding-left: 16px;
+  font-size: 12px;
+}
+
+.formTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  grid-gap: 1fr;
+  margin-top: 24px;
+
+  .title,
+  .city {
+    grid-column: 1 / 6;
+  }
+
+  .name,
+  .address {
+    grid-column: 7 / 18;
+  }
+
+  .phone {
+    grid-column: 1 / 9;
+  }
+
+  .email {
+    grid-column: 10 / 18;
+  }
+
+  .inputLabel {
+    color: var(--input-label);
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+}
