@@ -18,6 +18,9 @@ input {
 select {
   -webkit-appearance: none;
   background-color: transparent;
+  &:invalid {
+    color: var(--select-false);
+  }
 }
 
 .selectContainer {
