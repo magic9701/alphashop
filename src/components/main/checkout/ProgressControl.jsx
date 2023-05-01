@@ -41,7 +41,7 @@ function ProgressControl() {
       >
         <ButtonNext />
       </section>
-      <section
+      {/* <section
         className={`${styles.buttonGroup} col col-12`}
         data-phase="shipping"
       >
@@ -54,7 +54,7 @@ function ProgressControl() {
       >
         <ButtonPrevious />
         <ButtonSubmit />
-      </section>
+      </section> */}
     </section>
   );
 }
