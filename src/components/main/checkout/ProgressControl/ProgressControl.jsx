@@ -1,4 +1,4 @@
-import styles from "components/main/checkout/ProgressControl.module.scss";
+import styles from "components/Main/Checkout/ProgressControl/ProgressControl.module.scss";
 import ArrowPrevious from "assets/icons/PreviousArrow.svg";
 import ArrowNext from "assets/icons/NextArrow.svg";
 

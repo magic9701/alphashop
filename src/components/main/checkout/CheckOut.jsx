@@ -1,8 +1,8 @@
-import StepProgress from "components/main/checkout/StepProgress";
-import StepOne from "components/main/checkout/StepOne";
-import StepTwo from "components/main/checkout/StepTwo";
-import StepThree from "components/main/checkout/StepThree";
-import ProgressControl from "components/main/checkout/ProgressControl";
+import StepProgress from "components/Main/Checkout/StepProgress/StepProgress.jsx";
+import StepOne from "components/Main/Checkout/Steps/StepOne";
+import StepTwo from "components/Main/Checkout/Steps/StepTwo";
+import StepThree from "components/Main/Checkout/Steps/StepThree";
+import ProgressControl from "components/Main/Checkout/ProgressControl/ProgressControl";
 
 export default function CheckOut() {
   return (

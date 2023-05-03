@@ -1,4 +1,4 @@
-import styles from "components/main/checkout/StepProgress.module.scss";
+import styles from "components/Main/Checkout/StepProgress/StepProgress.module.scss";
 import stepUndone from "assets/icons/stepUndone.svg";
 
 function Progress({ dataPhase, number, label }) {

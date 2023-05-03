@@ -1,4 +1,4 @@
-import styles from "components/main/checkout/StepTwo.module.scss";
+import styles from "components/Main/Checkout/Steps/StepTwo.module.scss";
 
 function ShippingWay({ dataPrice, inputId, text, price, period }) {
   return (

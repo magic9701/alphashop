@@ -1,4 +1,4 @@
-import styles from "components/main/checkout/StepOne.module.scss";
+import styles from "components/Main/Checkout/Steps/StepOne.module.scss";
 
 function StepOne() {
   return (

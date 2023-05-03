@@ -1,4 +1,4 @@
-import styles from "components/main/checkout/StepThree.module.scss";
+import styles from "components/Main/Checkout/Steps/StepThree.module.scss";
 
 function RenderInput({ divCol, inputLabel, placeholder }) {
   return (
