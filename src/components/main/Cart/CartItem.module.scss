@@ -1,0 +1,36 @@
+.productContainer {
+  margin-top: 34px;
+  .imgContainer {
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .productInfo {
+    flex: 1;
+    margin-left: 21px;
+    .price {
+      display: flex;
+      flex:1 ;
+      justify-content: end;
+      color: black;
+      font-weight: 700;
+    }
+    
+    .productControlContainer {
+      margin-top: 13px;
+      .productControl {
+        display: flex;
+        align-items: center;
+      }
+      .productCount {
+        font-family: 'Inter';
+        font-weight: 500;
+        font-size: 14px;
+        color: #000000;
+        width: 53px;
+        text-align: center;
+      }
+    }
+  }
+}

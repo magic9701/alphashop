@@ -7,7 +7,7 @@ import ProgressControl from "components/Main/Checkout/ProgressControl/ProgressCo
 export default function CheckOut() {
   return (
     <section
-      class="register-container col col-lg-6 col-sm-12"
+      className="register-container col col-lg-6 col-sm-12"
       data-phase="1"
       data-total-price="0"
     >

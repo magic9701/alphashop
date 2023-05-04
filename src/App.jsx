@@ -1,9 +1,9 @@
 import "components/Styles/base.scss";
-import CheckOut from "components/Main/Checkout/CheckOut.jsx";
+import Main from "components/Main/Main.jsx";
 
 function App() {
   return (
-  <CheckOut />
+  <Main />
   );
 }
 
