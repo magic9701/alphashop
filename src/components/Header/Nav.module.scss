@@ -1,0 +1,51 @@
+header input,
+header label,
+.navIconSun {
+  display: none;
+}
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarMenu {
+  display: grid;
+  grid-template-columns: 1fr 170px 1fr;
+  .navList {
+    display: flex;
+  }
+  .siteMenuList {
+    display: flex;
+    .navLink {
+      text-decoration: none;
+      color: var(--nav-icon);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 32px;
+    }
+    .navItem:last-child a {
+      margin-right: 0;
+    }
+  }
+  .siteActionList {
+    justify-content: end;
+    gap: 24px;
+  }
+}
+
+.headerLogoContainer {
+  display: flex;
+  justify-content: center;
+}
