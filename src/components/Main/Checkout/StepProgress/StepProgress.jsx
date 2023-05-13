@@ -1,15 +1,16 @@
 import styles from "components/Main/Checkout/StepProgress/StepProgress.module.scss";
 import stepUndone from "assets/icons/stepUndone.svg";
+import stepDone from "assets/icons/currentStep.svg";
 
-function Progress({ dataPhase, number, label }) {
+function Progress({ dataPhase, number, label, currentStep}) {
   return (
     <span className={styles.progressGroup} data-phase={dataPhase}>
-      <span className={styles.progressIcon}>
-        <span className={styles.text}>{number}</span>
+      <span className={styles.progressIcon}>      
+        <span className={`${styles.text} ${number <= currentStep ? styles.done : styles.undone}`}>{number > (currentStep - 1) ? number : '✓'}</span>
         <img
           className={`${styles.icon} cursor-point}`}
-          src={stepUndone}
-          alt=""
+          src={number <= currentStep ? stepDone : stepUndone}
+          alt="stepIcon"
         />
       </span>
       <span className={styles.progressLabel}>{label}</span>
@@ -17,18 +18,18 @@ function Progress({ dataPhase, number, label }) {
   );
 }
 
-function StepProgress() {
+function StepProgress({currentStep}) {
   return (
     <div class="col col-12">
       {/* register-title */}
       <h2 className={styles.registerTitle + " col col-12"}>結帳</h2>
       {/* register-progress */}
       <section className={styles.progressContainer + " col col-12"}>
-        <Progress dataPhase={"address"} number={1} label={"寄送地址"} />
-        <span className={styles.progressBar} data-order={1} />
-        <Progress dataPhase={"shipping"} number={2} label={"運送方式"} />
+        <Progress dataPhase={"address"} number={1} label={"寄送地址"} currentStep={currentStep} />
+        <span className={styles.progressBar} data-order={1} currentStep={currentStep}/>
+        <Progress dataPhase={"shipping"} number={2} label={"運送方式"} currentStep={currentStep} />
         <span className={styles.progressBar} data-order={2} />
-        <Progress dataPhase={"credit-card"} number={3} label={"付款資訊"} />
+        <Progress dataPhase={"credit-card"} number={3} label={"付款資訊"} currentStep={currentStep} />
       </section>
     </div>
   );

@@ -2,9 +2,9 @@ import styles from "components/Main/Checkout/ProgressControl/ProgressControl.mod
 import ArrowPrevious from "assets/icons/PreviousArrow.svg";
 import ArrowNext from "assets/icons/NextArrow.svg";
 
-function ButtonPrevious() {
+function ButtonPrevious({onClick}) {
   return (
-    <button className={`${styles.prev} cursor-point`}>
+    <button className={`${styles.prev} cursor-point prev`} onClick={onClick}>
       <img
         className={styles.prevArrow + " cursor-point"}
         src={ArrowPrevious}
@@ -15,9 +15,9 @@ function ButtonPrevious() {
   );
 }
 
-function ButtonNext() {
+function ButtonNext({onClick}) {
   return (
-    <button className={`${styles.next} cursor-point`}>
+    <button className={`${styles.next} cursor-point next`} onClick={onClick}>
       下一步
       <img
         className={`${styles.NextArrow} cursor-point`}
@@ -28,33 +28,44 @@ function ButtonNext() {
   );
 }
 
-function ButtonSubmit() {
-  return <button className={`${styles.submit} cursor-point`}>確認下單</button>;
+function ButtonSubmit({onClick}) {
+  return <button className={`${styles.submit} cursor-point`} onClick={onClick}>確認下單</button>;
 }
 
-function ProgressControl() {
+function ProgressControl({changeStep, currentStep}) {
   return (
     <section className={`${styles.progressControlContainer} col col-12`}>
+      {/* step 1 button */}
+      {currentStep === 1 &&
       <section
         className={`${styles.buttonGroup} ${styles.addressButtonGroup} col col-12`}
         data-phase="address"
       >
-        <ButtonNext />
+        <ButtonNext onClick={changeStep}/>
       </section>
-      {/* <section
+      }
+
+      {/* step 2 button */}
+      {currentStep === 2 &&
+      <section
         className={`${styles.buttonGroup} col col-12`}
         data-phase="shipping"
       >
-        <ButtonPrevious />
-        <ButtonNext />
+        <ButtonPrevious onClick={changeStep}/>
+        <ButtonNext onClick={changeStep}/>
       </section>
+      }
+      
+      {/* step 3 button */}
+      {currentStep === 3 &&
       <section
         className={`${styles.buttonGroup} col col-12`}
         data-phase="credit-card"
       >
-        <ButtonPrevious />
+        <ButtonPrevious onClick={changeStep}/>
         <ButtonSubmit />
-      </section> */}
+      </section>
+      }
     </section>
   );
 }
