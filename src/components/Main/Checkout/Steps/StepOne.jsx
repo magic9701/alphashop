@@ -10,8 +10,8 @@ function StepOne() {
             <div className={`${styles.inputGroup} ${styles.title}`}>
               <div className={styles.inputLabel}>稱謂</div>
               <div className={styles.selectContainer}>
-                <select required>
-                  <option value="mr" selected="">
+                <select required defaultValue="mr">
+                  <option value="mr">
                     先生
                   </option>
                   <option value="ms">女士</option>
@@ -38,8 +38,8 @@ function StepOne() {
             <div className={`${styles.inputGroup} ${styles.city}`}>
               <div className={styles.inputLabel}>縣市</div>
               <div className={styles.selectContainer}>
-                <select required>
-                  <option value="" disabled selected>請選擇縣市</option>
+                <select required defaultValue="disable">
+                  <option value="disable" disabled>請選擇縣市</option>
                   <option value="KLU">基隆市</option>
                   <option value="TPH">新北市</option>
                   <option value="TPE">臺北市</option>
