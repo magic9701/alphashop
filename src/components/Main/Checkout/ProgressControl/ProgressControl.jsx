@@ -2,9 +2,9 @@ import styles from "components/Main/Checkout/ProgressControl/ProgressControl.mod
 import ArrowPrevious from "assets/icons/PreviousArrow.svg";
 import ArrowNext from "assets/icons/NextArrow.svg";
 
-function ButtonPrevious({onClick}) {
+function ButtonPrevious({changeStep}) {
   return (
-    <button className={`${styles.prev} cursor-point prev`} onClick={onClick}>
+    <button className={`${styles.prev} cursor-point prev`} onClick={changeStep}>
       <img
         className={styles.prevArrow + " cursor-point"}
         src={ArrowPrevious}
@@ -15,9 +15,9 @@ function ButtonPrevious({onClick}) {
   );
 }
 
-function ButtonNext({onClick}) {
+function ButtonNext({changeStep}) {
   return (
-    <button className={`${styles.next} cursor-point next`} onClick={onClick}>
+    <button className={`${styles.next} cursor-point next`} onClick={changeStep}>
       下一步
       <img
         className={`${styles.NextArrow} cursor-point`}
@@ -28,8 +28,8 @@ function ButtonNext({onClick}) {
   );
 }
 
-function ButtonSubmit({onClick}) {
-  return <button className={`${styles.submit} cursor-point`} onClick={onClick}>確認下單</button>;
+function ButtonSubmit({changeStep}) {
+  return <button className={`${styles.submit} cursor-point`} onClick={changeStep}>確認下單</button>;
 }
 
 function ProgressControl({changeStep, currentStep}) {
@@ -41,7 +41,7 @@ function ProgressControl({changeStep, currentStep}) {
         className={`${styles.buttonGroup} ${styles.addressButtonGroup} col col-12`}
         data-phase="address"
       >
-        <ButtonNext onClick={changeStep}/>
+        <ButtonNext changeStep={changeStep}/>
       </section>
       }
 
@@ -51,8 +51,8 @@ function ProgressControl({changeStep, currentStep}) {
         className={`${styles.buttonGroup} col col-12`}
         data-phase="shipping"
       >
-        <ButtonPrevious onClick={changeStep}/>
-        <ButtonNext onClick={changeStep}/>
+        <ButtonPrevious changeStep={changeStep}/>
+        <ButtonNext changeStep={changeStep}/>
       </section>
       }
       
@@ -62,7 +62,7 @@ function ProgressControl({changeStep, currentStep}) {
         className={`${styles.buttonGroup} col col-12`}
         data-phase="credit-card"
       >
-        <ButtonPrevious onClick={changeStep}/>
+        <ButtonPrevious changeStep={changeStep}/>
         <ButtonSubmit />
       </section>
       }

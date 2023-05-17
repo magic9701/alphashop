@@ -6,7 +6,7 @@ function Progress({ dataPhase, number, label, currentStep}) {
   return (
     <span className={styles.progressGroup} data-phase={dataPhase}>
       <span className={styles.progressIcon}>      
-        <span className={`${styles.text} ${number <= currentStep ? styles.done : styles.undone}`}>{number > (currentStep - 1) ? number : "✓"}</span>
+        <span className={`${styles.text} ${number <= currentStep && styles.done}`}>{number > (currentStep - 1) ? number : "✓"}</span>
         <img
           className={`${styles.icon} cursor-point}`}
           src={number <= currentStep ? stepDone : stepUndone}

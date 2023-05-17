@@ -2,7 +2,7 @@ import CartItem from "components/Main/Cart/CartItem.jsx"
 import styles from "components/Main/Cart/Cart.module.scss"
 import { useState } from "react"
 
-const items = [
+const dummyItems = [
   {
     id: '1',
     name: '貓咪罐罐',
@@ -21,14 +21,32 @@ const items = [
 
 
 function Cart () {
-  let itemsPrice = 0
-  items.forEach(item => 
-    itemsPrice += item.price * item.quantity
-  )
-  const [totalPrice, setTotalPrice] = useState(itemsPrice)
-  function recalculateTotal(price) {
-    setTotalPrice(totalPrice + price)
+  const [items, setItems] = useState(dummyItems)
+
+  //按鈕加減數量
+  function handleMinusClick(itemId) {
+    setItems(items.map(item => {
+      if(item.id === itemId && item.quantity > 0) {
+        return { ...item, quantity: item.quantity - 1 }
+      }
+      return item
+    }))
   }
+
+  function handlePlusClick(itemId) {
+    setItems(items.map(item => {
+      if(item.id === itemId) {
+        return { ...item, quantity: item.quantity + 1 }
+      }
+      return item
+    }))
+  }
+  
+  //計算總價
+  let totalPrice = 0
+  items.forEach(item => 
+    totalPrice += item.price * item.quantity
+  )
 
   return(
     <section className={`${styles.cartContainer} col col-lg-5 col-sm-12`}>
@@ -37,7 +55,7 @@ function Cart () {
       {/* 購物籃商品 */}
       <section className={`${styles.productList} col col-12`} data-total-price={0}>
       {items.map(item =>
-        <CartItem key={item.id} {...item} recalculateTotal={recalculateTotal} />)}
+        <CartItem key={item.id} {...item}  handleMinusClick={handleMinusClick} handlePlusClick={handlePlusClick}/>)}
       </section>
 
       {/* 運費 */}
