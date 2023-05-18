@@ -1,6 +1,8 @@
 import styles from "components/Main/Checkout/ProgressControl/ProgressControl.module.scss";
 import ArrowPrevious from "assets/icons/PreviousArrow.svg";
 import ArrowNext from "assets/icons/NextArrow.svg";
+import { useContext } from "react";
+import { CheckOutContext } from "contexts/CheckOutContext";
 
 function ButtonPrevious({changeStep}) {
   return (
@@ -28,8 +30,16 @@ function ButtonNext({changeStep}) {
   );
 }
 
-function ButtonSubmit({changeStep}) {
-  return <button className={`${styles.submit} cursor-point`} onClick={changeStep}>確認下單</button>;
+function ButtonSubmit() {
+  const { checkOutData } = useContext(CheckOutContext)
+
+  const handleSubmit = () => {
+    console.log(checkOutData)
+  }
+
+  return (
+    <button className={`${styles.submit} cursor-point`} onClick={handleSubmit}>確認下單</button>
+  )
 }
 
 function ProgressControl({changeStep, currentStep}) {
