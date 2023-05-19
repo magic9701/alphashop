@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { CheckOutContext } from "contexts/CheckOutContext.jsx";
+import { CheckOutContext } from "contexts/CheckOutContext";
 
 const dummyItems = [
   {
@@ -47,11 +47,15 @@ export const CartContextProvider = ({ children }) => {
   }
 
   //計算總價
+  const { checkOutData, setCheckOutData } = useContext(CheckOutContext)
   let totalPrice = 0;
   items.forEach((item) => (totalPrice += item.price * item.quantity));
 
+  if (checkOutData.shipping === 500) {
+  totalPrice += 500
+  }
+
   // 更新 checkOutData 的 totalPrice
-  const { setCheckOutData } = useContext(CheckOutContext)
   useEffect(() => {
     setCheckOutData((prevData) => ({
       ...prevData,

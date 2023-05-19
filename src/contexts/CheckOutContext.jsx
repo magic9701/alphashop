@@ -4,25 +4,34 @@ export const CheckOutContext = createContext();
 
 export const CheckOutContextProvider = ({ children }) => {
   const [checkOutData, setCheckOutData] = useState({
+    shipping: 0,
     cardHolderName: null,
     cardNumber: null,
     expiryDate: null,
     ccv: null,
-    totalPrice: 0,
+    totalPrice: null,
   })
 
   const handleInputChange = (e => {
-    const { name, value} = e.target
+    const { name, value } = e.target
     setCheckOutData(prevCheckOutData => ({
     ...prevCheckOutData,
     [name]: value,
     }))
   })
 
+  const handleShippingChange = (e => {
+    setCheckOutData(prevCheckOutData => ({
+      ...prevCheckOutData,
+      shipping: parseInt(e.target.value)
+    }))
+  });
+
   const value = {
     checkOutData,
     setCheckOutData,
     handleInputChange,
+    handleShippingChange,
   }
 
   return (

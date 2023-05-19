@@ -8,7 +8,7 @@ function RenderInput({ divCol, inputLabel, placeholder, name }) {
     <div className={`${divCol} ${styles.container}`}>
       <div className={styles.inputGroup}>
         <div className={styles.inputLabel}>{inputLabel}</div>
-        <input type="text" placeholder={placeholder} name={name} onChange={handleInputChange}/>
+        <input type="text" placeholder={placeholder} name={name} onChange={handleInputChange} />
       </div>
     </div>
   );
